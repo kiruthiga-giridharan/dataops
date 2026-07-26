@@ -59,17 +59,17 @@
   const root = document.documentElement;
   const btn  = document.getElementById('themeBtn');
 
-  const prefersDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
   const savedTheme  = () => localStorage.getItem('kg-theme');
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
     localStorage.setItem('kg-theme', theme);
+    btn?.setAttribute('aria-pressed', String(theme === 'dark'));
     // Recolour canvas particles on theme switch
     if (window._particleTheme) window._particleTheme(theme);
   }
 
-  const initial = savedTheme() ?? (prefersDark() ? 'dark' : 'light');
+  const initial = savedTheme() ?? 'light';
   applyTheme(initial);
 
   btn?.addEventListener('click', () => {
