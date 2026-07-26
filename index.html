@@ -98,7 +98,7 @@
         <!-- Bio, Julius-style: personal, present tense -->
         <div class="hero-bio">
           <p>
-            Hi, I'm Kiruthiga — an Operations &amp; Data Specialist with
+            Hi, I'm Kiruthiga an Operations &amp; Data Specialist with
             <span class="bio-em">4+ years bridging engineering and business</span> across EMEA enterprise environments.
           </p>
           <p>
@@ -143,24 +143,10 @@
       <!-- RIGHT: ops dashboard widget -->
       <div class="hero-right">
 
-        <!-- Photo circle + "This is me" annotation — standalone above dashboard -->
+        <!-- Photo circle — profile photo -->
         <div class="hero-photo-wrap">
           <div class="hero-photo-circle" id="heroPhotoCircle">
-            <label for="photoUpload" class="photo-upload-label" title="Upload your photo or video">
-              <svg class="photo-placeholder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <span class="photo-upload-hint">Add photo</span>
-            </label>
-            <input type="file" id="photoUpload" accept="image/*,video/*" style="display:none" />
-            <img id="photoPreview" class="photo-preview" src="" alt="Kiruthiga Giridharan" style="display:none" />
-            <video id="videoPreview" class="photo-preview" style="display:none" autoplay muted loop playsinline></video>
-          </div>
-          <!-- "This is me" label + animated arrow pointing right toward circle -->
-          <div class="this-is-me">
-            <span class="this-is-me-label">This is me</span>
-            <svg class="this-is-me-arrow" width="48" height="20" viewBox="0 0 48 20" fill="none">
-              <path d="M2 10 C12 10, 26 10, 40 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M36 5 L44 10 L36 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <img class="photo-preview" src="assets/profilephoto.jpeg" alt="Kiruthiga Giridharan" style="display:block" />
           </div>
         </div>
 
@@ -730,37 +716,71 @@
       <div class="edu-card edu-card--trinity">
         <div class="bento-noise"></div>
         <div class="edu-orb"></div>
-        <div class="edu-top">
-          <span class="edu-degree">MSc in Management</span>
-          <span class="edu-badge">Postgraduate</span>
+        <div class="edu-photo-wrap">
+          <img src="assets/graduate.jpeg" alt="Graduation at Trinity College Dublin" class="edu-photo" />
+          <div class="edu-photo-caption">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            I graduated here
+          </div>
         </div>
-        <div class="edu-school">Trinity College Dublin</div>
-        <div class="edu-year">2022 – 2023</div>
-        <p class="edu-note">Research: Customer Retention Marketing Strategies in the Cosmetics Industry, Ireland</p>
+        <div class="edu-details">
+          <div class="edu-top">
+            <span class="edu-degree">MSc in Management</span>
+            <span class="edu-badge">Postgraduate</span>
+          </div>
+          <div class="edu-school">Trinity College Dublin</div>
+          <div class="edu-year">2022 – 2023</div>
+          <p class="edu-note">Research: Customer Retention Marketing Strategies in the Cosmetics Industry, Ireland</p>
+        </div>
       </div>
 
       <div class="edu-card edu-card--anna">
         <div class="bento-noise"></div>
         <div class="edu-orb"></div>
-        <div class="edu-top">
-          <span class="edu-degree">Bachelor of Engineering</span>
-          <span class="edu-badge edu-badge--gold">First Class</span>
+        <div class="edu-photo-wrap">
+          <img src="assets/Enginnering.jpeg" alt="Bachelor of Engineering" class="edu-photo" />
+          <div class="edu-photo-caption">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-7 10 7-10 7-10-7z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Anna University, Chennai
+          </div>
         </div>
-        <div class="edu-school">Anna University, Chennai</div>
-        <div class="edu-year">2016 – 2020</div>
-        <p class="edu-note">CGPA 8.2/10 · Best Outgoing Student 2020 · Elected Student Coordinator</p>
+        <div class="edu-details">
+          <div class="edu-top">
+            <span class="edu-degree">Bachelor of Engineering</span>
+            <span class="edu-badge edu-badge--gold">First Class</span>
+          </div>
+          <div class="edu-school">Anna University, Chennai</div>
+          <div class="edu-year">2016 – 2020</div>
+          <p class="edu-note">CGPA 8.2/10 · Best Outgoing Student 2020 · Elected Student Coordinator</p>
+          <div class="edu-achievement">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <div>
+              <strong>Graduated First Class</strong>
+              <span>Top of cohort · CGPA 8.2/10</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="edu-card edu-card--pmp">
         <div class="bento-noise"></div>
         <div class="edu-orb"></div>
-        <div class="edu-top">
-          <span class="edu-degree">PMP Certification</span>
-          <span class="edu-badge edu-badge--pulse">In Progress</span>
+        <div class="edu-photo-wrap">
+          <img src="assets/certification.jpeg" alt="PMP Certification" class="edu-photo" />
+          <div class="edu-photo-caption">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+            In Progress · 2026
+          </div>
         </div>
-        <div class="edu-school">PMI</div>
-        <div class="edu-year">2025</div>
-        <p class="edu-note">Project Management Professional — PMI</p>
+        <div class="edu-details">
+          <div class="edu-top">
+            <span class="edu-degree">PMP Certification</span>
+            <span class="edu-badge edu-badge--pulse">In Progress</span>
+          </div>
+          <div class="edu-school">PMI</div>
+          <div class="edu-year">2025</div>
+          <p class="edu-note">Project Management Professional — PMI</p>
+        </div>
       </div>
     </div>
   </section>
@@ -783,7 +803,7 @@
           "A highly dependable and talented professional who adapts quickly, integrates seamlessly, and consistently delivers high-quality results. A strong asset to any organization fortunate enough to have her."
         </div>
         <div class="vc-author">
-          <div class="vc-avatar" style="--c: #A6445D">BB</div>
+          <div class="vc-avatar" style="--c: #7D2E45">BB</div>
           <div>
             <div class="vc-name">Bosko Bjegovic</div>
             <div class="vc-role">Senior Director AI-Driven Operations, Circana</div>
@@ -797,7 +817,7 @@
           "She seamlessly integrated into our team culture, was always open to feedback, using it to continuously grow and elevate her work. A massive asset wherever she goes next."
         </div>
         <div class="vc-author">
-          <div class="vc-avatar" style="--c: #C9973A">MP</div>
+          <div class="vc-avatar" style="--c: #A6445D">MP</div>
           <div>
             <div class="vc-name">Magdalena Pisarska</div>
             <div class="vc-role">Sr Manager Data Management, Circana</div>
@@ -811,7 +831,7 @@
           "Kiruthiga has excelled in this role, exhibiting one of the highest levels of productivity and professionalism I have witnessed during my 8+ years at the company."
         </div>
         <div class="vc-author">
-          <div class="vc-avatar" style="--c: #E8C87A">WB</div>
+          <div class="vc-avatar" style="--c: #C4657B">WB</div>
           <div>
             <div class="vc-name">Waldemar Baer</div>
             <div class="vc-role">Account Manager, Circana</div>
@@ -825,7 +845,7 @@
           "A clever, fast-thinking, efficient and focused worker who consistently excels and would be a benefit to any employer lucky enough to get her."
         </div>
         <div class="vc-author">
-          <div class="vc-avatar" style="--c: #C9973A">KW</div>
+          <div class="vc-avatar" style="--c: #A6445D">KW</div>
           <div>
             <div class="vc-name">Kristen Worth</div>
             <div class="vc-role">Sales Manager, Estée Lauder Companies</div>
@@ -857,9 +877,9 @@
         </a>
       </div>
       <div class="footer-bottom">
-        <span>© 2025 Kiruthiga Giridharan</span>
+        <span>© 2026 Kiruthiga Giridharan</span>
         <span>Dublin, Ireland</span>
-        <a href="https://www.linkedin.com/in/kiruthigagiridharan" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://www.linkedin.com/in/kiruthiga-giridharan/" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
     </div>
   </footer>

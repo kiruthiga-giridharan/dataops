@@ -414,7 +414,7 @@
             a.style.background = '';
             if (a.getAttribute('href') === `#${entry.target.id}`) {
               a.style.color = 'var(--indigo)';
-              a.style.background = 'rgba(91,94,244,0.07)';
+              a.style.background = 'rgba(166,68,93,0.08)';
             }
           });
         }
