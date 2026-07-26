@@ -18,7 +18,7 @@
         <span class="logo-mark">KG</span>
       </a>
 
-      <nav class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="#work">Work</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
@@ -35,7 +35,19 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
           </span>
         </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#work"    class="mm-link">Work</a>
+      <a href="#skills"  class="mm-link">Skills</a>
+      <a href="#education" class="mm-link">Education</a>
+      <a href="#voice"   class="mm-link">Recommendations</a>
+      <a href="mailto:kiruthigagiri@gmail.com" class="mm-cta">Say Hello ↗</a>
     </div>
   </header>
 
@@ -44,6 +56,7 @@
 
     <!-- Background canvas -->
     <div class="hero-canvas" aria-hidden="true">
+      <canvas id="heroCanvas"></canvas>
       <div class="canvas-blob blob-1"></div>
       <div class="canvas-blob blob-2"></div>
       <div class="canvas-blob blob-3"></div>
@@ -51,97 +64,243 @@
       <div class="canvas-grid"></div>
     </div>
 
-    <!-- Floating ambient chips -->
-    <div class="ambient-chips" aria-hidden="true">
-      <div class="chip chip-1">100% SLA Compliance</div>
-      <div class="chip chip-2">EMEA · 5 Markets</div>
-      <div class="chip chip-3">AI-Driven Ops</div>
-      <div class="chip chip-4">45% Faster Resolution</div>
+    <div class="hero-inner">
+
+      <!-- LEFT: editorial block -->
+      <div class="hero-left">
+
+        <!-- Julius-style: name is the hero -->
+        <div class="hero-name-block">
+          <h1 class="hero-name">Kiruthiga<br/>Giridharan</h1>
+          <p class="hero-role">Operations Specialist</p>
+        </div>
+
+        <!-- Social proof: company logos row (like Julius' Pitch / Microsoft / Flexa) -->
+        <div class="hero-logos">
+          <span class="logo-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg>
+            Circana
+          </span>
+          <span class="logo-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Estée Lauder
+          </span>
+          <span class="logo-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            TCS
+          </span>
+          <span class="logo-pill logo-pill--dim">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Dublin, Ireland
+          </span>
+        </div>
+
+        <!-- Bio, Julius-style: personal, present tense -->
+        <div class="hero-bio">
+          <p>
+            Hi, I'm Kiruthiga — an Operations &amp; Data Specialist with
+            <span class="bio-em">4+ years bridging engineering and business</span> across EMEA enterprise environments.
+          </p>
+          <p>
+            I turn complex data pipelines into reliable, on-time reporting —
+            and I was using AI to debug Azure pipelines before it was a job description.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="mailto:kiruthigagiri@gmail.com" class="cta-primary">
+            Get in touch
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#work" class="cta-ghost">View work</a>
+        </div>
+
+        <!-- Stat ribbon horizontal -->
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-n" data-count="4" data-suffix="+">4<sup>+</sup></span>
+            <span class="stat-l">Years exp.</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <span class="stat-n" data-count="500" data-suffix="+">500<sup>+</sup></span>
+            <span class="stat-l">Client accounts</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <span class="stat-n" data-count="5">5</span>
+            <span class="stat-l">EMEA markets</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <span class="stat-n" data-count="80" data-suffix="+">80<sup>+</sup></span>
+            <span class="stat-l">Tickets / week</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: ops dashboard widget -->
+      <div class="hero-right">
+
+        <!-- Photo circle + "This is me" annotation — standalone above dashboard -->
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-circle" id="heroPhotoCircle">
+            <label for="photoUpload" class="photo-upload-label" title="Upload your photo or video">
+              <svg class="photo-placeholder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span class="photo-upload-hint">Add photo</span>
+            </label>
+            <input type="file" id="photoUpload" accept="image/*,video/*" style="display:none" />
+            <img id="photoPreview" class="photo-preview" src="" alt="Kiruthiga Giridharan" style="display:none" />
+            <video id="videoPreview" class="photo-preview" style="display:none" autoplay muted loop playsinline></video>
+          </div>
+          <!-- "This is me" label + animated arrow pointing right toward circle -->
+          <div class="this-is-me">
+            <span class="this-is-me-label">This is me</span>
+            <svg class="this-is-me-arrow" width="48" height="20" viewBox="0 0 48 20" fill="none">
+              <path d="M2 10 C12 10, 26 10, 40 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M36 5 L44 10 L36 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Widget wrapper — chips anchor to this, not the whole column -->
+        <div class="hero-widget-wrap">
+
+          <!-- Floating ambient chips — positioned relative to widget -->
+          <div class="ambient-chips" aria-hidden="true">
+            <div class="chip chip-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              100% SLA
+            </div>
+            <div class="chip chip-2">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              45% Faster
+            </div>
+            <div class="chip chip-3">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg>
+              AI-Driven Ops
+            </div>
+          </div>
+
+          <!-- Ops dashboard widget -->
+          <div class="hero-widget" aria-hidden="true">
+          <div class="hw-header">
+            <div class="hw-title">
+              <span class="hw-dot"></span>
+              Weekly Ops Dashboard
+            </div>
+            <span class="hw-live">LIVE</span>
+          </div>
+
+          <div class="hw-kpis">
+            <div class="hw-kpi">
+              <span class="hw-kpi-n">80+</span>
+              <span class="hw-kpi-l">Tickets</span>
+            </div>
+            <div class="hw-kpi">
+              <span class="hw-kpi-n">100%</span>
+              <span class="hw-kpi-l">SLA</span>
+            </div>
+            <div class="hw-kpi">
+              <span class="hw-kpi-n">5</span>
+              <span class="hw-kpi-l">Markets</span>
+            </div>
+          </div>
+
+          <div class="hw-chart-label">Tickets resolved · last 7 days</div>
+          <div class="hw-bars">
+            <div class="hw-bar-wrap"><div class="hw-bar" style="--h:55%;--d:0.0s"></div><span>M</span></div>
+            <div class="hw-bar-wrap"><div class="hw-bar" style="--h:80%;--d:0.1s"></div><span>T</span></div>
+            <div class="hw-bar-wrap"><div class="hw-bar" style="--h:65%;--d:0.2s"></div><span>W</span></div>
+            <div class="hw-bar-wrap"><div class="hw-bar" style="--h:90%;--d:0.3s"></div><span>T</span></div>
+            <div class="hw-bar-wrap"><div class="hw-bar" style="--h:70%;--d:0.4s"></div><span>F</span></div>
+            <div class="hw-bar-wrap"><div class="hw-bar hw-bar--today" style="--h:100%;--d:0.5s"></div><span class="hw-today">S</span></div>
+            <div class="hw-bar-wrap"><div class="hw-bar" style="--h:40%;--d:0.6s"></div><span>S</span></div>
+          </div>
+
+          <div class="hw-spark-label">Error resolution trend</div>
+          <svg class="hw-sparkline" viewBox="0 0 200 40" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="sparkGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(166,68,93,0.35)"/>
+                <stop offset="100%" stop-color="rgba(166,68,93,0)"/>
+              </linearGradient>
+            </defs>
+            <path class="hw-spark-fill" d="M0,38 L0,28 C20,26 30,18 50,16 C70,14 80,22 100,18 C120,14 130,8 150,6 C170,4 185,10 200,8 L200,38 Z"/>
+            <path class="hw-spark-line" d="M0,28 C20,26 30,18 50,16 C70,14 80,22 100,18 C120,14 130,8 150,6 C170,4 185,10 200,8"/>
+            <circle class="hw-spark-dot" cx="200" cy="8" r="3"/>
+          </svg>
+
+          <div class="hw-status-row">
+            <div class="hw-status hw-status--green">
+              <span class="hw-status-dot"></span>All systems operational
+            </div>
+            <div class="hw-status hw-status--dim">Updated just now</div>
+          </div>
+        </div>
+
+        </div><!-- /hero-widget-wrap -->
+
+      </div>
     </div>
 
-    <div class="hero-body">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Operations Specialist · Dublin, Ireland
-      </div>
-
-      <h1 class="hero-headline">
-        <span class="line-1">Data meets</span>
-        <span class="line-2">
-          <em class="headline-em">strategy</em>
-          <span class="headline-at">—</span>
-        </span>
-        <span class="line-3">at scale.</span>
-      </h1>
-
-      <p class="hero-sub">
-        Kiruthiga Giridharan bridges engineering precision with commercial intuition,<br class="br-d" />
-        driving reliable, on-time reporting across EMEA enterprise environments.
-      </p>
-
-      <div class="hero-actions">
-        <a href="mailto:kiruthigagiri@gmail.com" class="cta-primary">
-          Get in touch
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#work" class="cta-ghost">View work</a>
-      </div>
+    <!-- scroll cue -->
+    <div class="hero-scroll-cue" aria-hidden="true">
+      <span>Scroll to explore</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     </div>
 
-    <!-- Stat ribbon -->
-    <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-n">4<sup>+</sup></span>
-        <span class="stat-l">Years</span>
-      </div>
-      <div class="stat-div"></div>
-      <div class="stat">
-        <span class="stat-n">500<sup>+</sup></span>
-        <span class="stat-l">Client accounts</span>
-      </div>
-      <div class="stat-div"></div>
-      <div class="stat">
-        <span class="stat-n">5</span>
-        <span class="stat-l">EMEA markets</span>
-      </div>
-      <div class="stat-div"></div>
-      <div class="stat">
-        <span class="stat-n">80<sup>+</sup></span>
-        <span class="stat-l">Tickets / week</span>
-      </div>
-    </div>
   </section>
 
   <!-- ═══ MARQUEE ═══════════════════════════════════════════════ -->
   <div class="marquee-wrap" aria-hidden="true">
     <div class="marquee-track">
-      <span>SQL</span><span class="sep">·</span>
-      <span>Power BI</span><span class="sep">·</span>
-      <span>Tableau</span><span class="sep">·</span>
-      <span>Azure Pipeline</span><span class="sep">·</span>
-      <span>Python</span><span class="sep">·</span>
-      <span>DAX</span><span class="sep">·</span>
-      <span>Salesforce</span><span class="sep">·</span>
-      <span>SAP</span><span class="sep">·</span>
-      <span>Jira</span><span class="sep">·</span>
-      <span>Agile</span><span class="sep">·</span>
-      <span>UAT</span><span class="sep">·</span>
-      <span>Process Mapping</span><span class="sep">·</span>
-      <span>VLOOKUP</span><span class="sep">·</span>
-      <span>ChatGPT & Claude</span><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg><span>SQL</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="assets/powerbi.webp" width="15" height="15" alt=""><span>Power BI</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="assets/tableau-software_thumb.png" width="15" height="15" alt=""><span>Tableau</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="assets/microsoft_azure.svg_.png" width="15" height="15" alt=""><span>Azure Data Factory</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="https://cdn.simpleicons.org/python/3776AB" width="15" height="15" alt=""><span>Python</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><span>DAX</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg><span>Power Query / M</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="https://cdn.simpleicons.org/databricks/FF3621" width="15" height="15" alt=""><span>Databricks</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg><span>VLOOKUP</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="assets/images.png" width="15" height="15" alt=""><span>Salesforce</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><span>MS Dynamics CRM</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="https://cdn.simpleicons.org/sap/0FAAFF" width="15" height="15" alt=""><span>SAP</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="https://cdn.simpleicons.org/jira/0052CC" width="15" height="15" alt=""><span>Jira</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg><span>Agile</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>UAT</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>Root Cause Analysis</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>BRD</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Vendor Negotiation</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg><span>Pricing Management</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span>Demand Forecasting</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="16" y="3" width="5" height="5" rx="1"/><rect x="9.5" y="16" width="5" height="5" rx="1"/><path d="M5.5 8v3a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8"/><path d="M12 12v4"/></svg><span>Process Mapping</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5L12 2z"/></svg><span>ChatGPT &amp; Claude</span></div><span class="sep">·</span>
       <!-- duplicate for seamless loop -->
-      <span>SQL</span><span class="sep">·</span>
-      <span>Power BI</span><span class="sep">·</span>
-      <span>Tableau</span><span class="sep">·</span>
-      <span>Azure Pipeline</span><span class="sep">·</span>
-      <span>Python</span><span class="sep">·</span>
-      <span>DAX</span><span class="sep">·</span>
-      <span>Salesforce</span><span class="sep">·</span>
-      <span>SAP</span><span class="sep">·</span>
-      <span>Jira</span><span class="sep">·</span>
-      <span>Agile</span><span class="sep">·</span>
-      <span>UAT</span><span class="sep">·</span>
-      <span>Process Mapping</span><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg><span>SQL</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="assets/powerbi.webp" width="15" height="15" alt=""><span>Power BI</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="assets/tableau-software_thumb.png" width="15" height="15" alt=""><span>Tableau</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="assets/microsoft_azure.svg_.png" width="15" height="15" alt=""><span>Azure Data Factory</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="https://cdn.simpleicons.org/python/3776AB" width="15" height="15" alt=""><span>Python</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg><span>DAX</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg><span>Power Query / M</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="https://cdn.simpleicons.org/databricks/FF3621" width="15" height="15" alt=""><span>Databricks</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg><span>VLOOKUP</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="assets/images.png" width="15" height="15" alt=""><span>Salesforce</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><span>MS Dynamics CRM</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="https://cdn.simpleicons.org/sap/0FAAFF" width="15" height="15" alt=""><span>SAP</span></div><span class="sep">·</span>
+      <div class="mq-item"><img src="https://cdn.simpleicons.org/jira/0052CC" width="15" height="15" alt=""><span>Jira</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg><span>Agile</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>UAT</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>Root Cause Analysis</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>BRD</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Vendor Negotiation</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg><span>Pricing Management</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span>Demand Forecasting</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="16" y="3" width="5" height="5" rx="1"/><rect x="9.5" y="16" width="5" height="5" rx="1"/><path d="M5.5 8v3a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8"/><path d="M12 12v4"/></svg><span>Process Mapping</span></div><span class="sep">·</span>
+      <div class="mq-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5L12 2z"/></svg><span>ChatGPT &amp; Claude</span></div><span class="sep">·</span>
     </div>
   </div>
 
@@ -378,6 +537,34 @@
             <span>Python</span>
           </div>
 
+          <div class="skill-tile">
+            <div class="st-logo st-custom" style="--logo-color:#f59e0b">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+            </div>
+            <span>DAX</span>
+          </div>
+
+          <div class="skill-tile">
+            <div class="st-logo st-custom" style="--logo-color:#10b981">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+            </div>
+            <span>Power Query / M</span>
+          </div>
+
+          <div class="skill-tile">
+            <div class="st-logo st-custom" style="--logo-color:#e11d48">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <span>Databricks</span>
+          </div>
+
+          <div class="skill-tile">
+            <div class="st-logo st-custom" style="--logo-color:#16a34a">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <span>VLOOKUP</span>
+          </div>
+
         </div>
       </div>
 
@@ -397,10 +584,24 @@
           </div>
 
           <div class="skill-tile">
+            <div class="st-logo st-custom" style="--logo-color:#0078d4">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5v14"/><path d="M21 12H7"/><path d="M15 6l6 6-6 6"/><path d="M7 9l-4 3 4 3"/></svg>
+            </div>
+            <span>Azure Data Factory</span>
+          </div>
+
+          <div class="skill-tile">
             <div class="st-logo st-img">
               <img src="assets/images.png" alt="Salesforce" width="32" height="32" />
             </div>
             <span>Salesforce</span>
+          </div>
+
+          <div class="skill-tile">
+            <div class="st-logo st-custom" style="--logo-color:#0078d4">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+            </div>
+            <span>MS Dynamics CRM</span>
           </div>
 
           <div class="skill-tile">
@@ -443,21 +644,21 @@
           </div>
 
           <div class="skill-tile">
-            <div class="st-logo st-custom" style="--logo-color:#6366f1">
+            <div class="st-logo st-custom" style="--logo-color:#A6445D">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="16" y="3" width="5" height="5" rx="1"/><rect x="9.5" y="16" width="5" height="5" rx="1"/><path d="M5.5 8v3a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8"/><path d="M12 12v4"/></svg>
             </div>
             <span>Process Map</span>
           </div>
 
           <div class="skill-tile">
-            <div class="st-logo st-custom" style="--logo-color:#8b5cf6">
+            <div class="st-logo st-custom" style="--logo-color:#C4657B">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <span>Stakeholders</span>
           </div>
 
           <div class="skill-tile">
-            <div class="st-logo st-custom" style="--logo-color:#0ea5e9">
+            <div class="st-logo st-custom" style="--logo-color:#B85470">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
             </div>
             <span>Onboarding</span>
@@ -468,6 +669,48 @@
               <img src="https://cdn.simpleicons.org/jira/0052CC" alt="Agile" width="32" height="32" />
             </div>
             <span>Agile</span>
+          </div>
+
+          <div class="skill-tile">
+            <div class="st-logo st-custom" style="--logo-color:#06b6d4">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <span>UAT & Test Strategy</span>
+          </div>
+
+          <div class="skill-tile">
+            <div class="st-logo st-custom" style="--logo-color:#ef4444">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+            <span>Root Cause Analysis</span>
+          </div>
+
+          <div class="skill-tile">
+            <div class="st-logo st-custom" style="--logo-color:#7c3aed">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <span>BRD</span>
+          </div>
+
+          <div class="skill-tile">
+            <div class="st-logo st-custom" style="--logo-color:#d97706">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <span>Vendor Negotiation</span>
+          </div>
+
+          <div class="skill-tile">
+            <div class="st-logo st-custom" style="--logo-color:#059669">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <span>Pricing Management</span>
+          </div>
+
+          <div class="skill-tile">
+            <div class="st-logo st-custom" style="--logo-color:#2563eb">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M5 20V8l7-6 7 6v12"/><path d="M9 20v-5h6v5"/></svg>
+            </div>
+            <span>Demand Forecasting</span>
           </div>
 
         </div>
@@ -540,7 +783,7 @@
           "A highly dependable and talented professional who adapts quickly, integrates seamlessly, and consistently delivers high-quality results. A strong asset to any organization fortunate enough to have her."
         </div>
         <div class="vc-author">
-          <div class="vc-avatar" style="--c: #6366f1">BB</div>
+          <div class="vc-avatar" style="--c: #A6445D">BB</div>
           <div>
             <div class="vc-name">Bosko Bjegovic</div>
             <div class="vc-role">Senior Director AI-Driven Operations, Circana</div>
@@ -554,7 +797,7 @@
           "She seamlessly integrated into our team culture, was always open to feedback, using it to continuously grow and elevate her work. A massive asset wherever she goes next."
         </div>
         <div class="vc-author">
-          <div class="vc-avatar" style="--c: #8b5cf6">MP</div>
+          <div class="vc-avatar" style="--c: #C9973A">MP</div>
           <div>
             <div class="vc-name">Magdalena Pisarska</div>
             <div class="vc-role">Sr Manager Data Management, Circana</div>
@@ -568,7 +811,7 @@
           "Kiruthiga has excelled in this role, exhibiting one of the highest levels of productivity and professionalism I have witnessed during my 8+ years at the company."
         </div>
         <div class="vc-author">
-          <div class="vc-avatar" style="--c: #0ea5e9">WB</div>
+          <div class="vc-avatar" style="--c: #E8C87A">WB</div>
           <div>
             <div class="vc-name">Waldemar Baer</div>
             <div class="vc-role">Account Manager, Circana</div>
@@ -582,7 +825,7 @@
           "A clever, fast-thinking, efficient and focused worker who consistently excels and would be a benefit to any employer lucky enough to get her."
         </div>
         <div class="vc-author">
-          <div class="vc-avatar" style="--c: #ec4899">KW</div>
+          <div class="vc-avatar" style="--c: #C9973A">KW</div>
           <div>
             <div class="vc-name">Kristen Worth</div>
             <div class="vc-role">Sales Manager, Estée Lauder Companies</div>
