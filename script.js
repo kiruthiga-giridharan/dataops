@@ -98,11 +98,11 @@
 
     function setColors(theme) {
       if (theme === 'dark') {
-        dotColor  = 'rgba(139,92,246,';    // violet
-        lineColor = 'rgba(91,94,244,';     // indigo
+        dotColor  = 'rgba(127,176,245,';   // violet
+        lineColor = 'rgba(82,140,227,';    // indigo
       } else {
-        dotColor  = 'rgba(91,94,244,';     // indigo
-        lineColor = 'rgba(139,92,246,';    // violet
+        dotColor  = 'rgba(82,140,227,';    // indigo
+        lineColor = 'rgba(127,176,245,';   // violet
       }
     }
 
@@ -414,7 +414,7 @@
             a.style.background = '';
             if (a.getAttribute('href') === `#${entry.target.id}`) {
               a.style.color = 'var(--indigo)';
-              a.style.background = 'rgba(166,68,93,0.08)';
+              a.style.background = 'rgba(82,140,227,0.08)';
             }
           });
         }
